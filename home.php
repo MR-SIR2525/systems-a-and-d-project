@@ -43,7 +43,8 @@
       <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
     </div>
     <div class="w3-col s3">
-      <a href="#menu" class="w3-button w3-block w3-black">MENU</a>
+      <button onclick="document.getElementById('staff-add').style.display='block'" 
+        class="w3-button w3-block w3-black">Add Employee</button>
     </div>
     <div class="w3-col s3">
       <!-- <a href="staff-login.php" class="w3-button w3-block w3-black">Staff Login</a> -->
@@ -79,11 +80,14 @@
 <!-- Footer -->
 <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <a href="/utilities/phpinfo.php">php info</a>
 </footer>
 
 
 <!-- Including the Staff Login Modal here, just before the end of the body -->
 <?php include 'staff-login.html'; ?>
+
+<?php include 'staff-add.html'; ?>
 
 
 <script>
