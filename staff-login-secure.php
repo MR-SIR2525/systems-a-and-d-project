@@ -51,4 +51,8 @@
     // Close statement and connection
     $stmt->close();
     $conn->close();
+
+    // Redirect to the login page or home page
+    header("Location: home.php");
+    exit;
 ?>
