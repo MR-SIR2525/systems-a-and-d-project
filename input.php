@@ -10,7 +10,10 @@
 
 
 <body>
-  <div class="container">
+
+  <?php include 'templates/nav.php'; ?>
+  
+  <div class="container" style="margin-top: 55px">
     <header>
       <h1>Author Personal Info and Manuscript</h1>
       <p>Fill out your information and upload your manuscript.</p>
@@ -62,27 +65,32 @@
     <!-- Success/Error Message -->
     <div id="message" class="message"></div>
   </div>
+
+
+  <!-- Footer -->
+  <?php include 'templates/footer.html'; ?>
+
   <!-- 
-<script>
-    document.getElementById("dataInputForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-        let form = event.target;
-        let allFieldsValid = form.checkValidity();
+  <script>
+      document.getElementById("dataInputForm").addEventListener("submit", function(event) {
+          event.preventDefault();
+          let form = event.target;
+          let allFieldsValid = form.checkValidity();
 
-        // Get message element
-        let message = document.getElementById("message");
+          // Get message element
+          let message = document.getElementById("message");
 
-        if (allFieldsValid) {
-            message.textContent = "Successfully Submitted!";
-            message.className = "message success";
-        } else {
-            message.textContent = "Error: Please fill out all required fields correctly.";
-            message.className = "message error";
-        }
-        
-        message.style.display = "block";
-    });
-</script> -->
+          if (allFieldsValid) {
+              message.textContent = "Successfully Submitted!";
+              message.className = "message success";
+          } else {
+              message.textContent = "Error: Please fill out all required fields correctly.";
+              message.className = "message error";
+          }
+          
+          message.style.display = "block";
+      });
+  </script> -->
 
 </body>
 
