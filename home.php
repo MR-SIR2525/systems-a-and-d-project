@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Kaitaia Publishing Collective | Home</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
-<style>
-body, html {
-  height: 100%;
-  font-family: "Inconsolata", sans-serif;
-}
+  <head>
+    <title>Kaitaia Publishing Collective | Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
 
-.bgimg {
-  background-position: center;
-  background-size: cover;
-  background-image: url("/images/book_road.png");
-  min-height: 75%;
-}
+    <!-- required for pages with the login modal form -->
+    <link rel="stylesheet" href="login-modal.css">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      body, html {
+        height: 100%;
+        font-family: "Inconsolata", sans-serif;
+      }
 
-.menu {
-  display: none;
-}
-</style>
-</head>
+      .bgimg {
+        background-position: center;
+        background-size: cover;
+        background-image: url("/images/book_road.png");
+        min-height: 75%;
+      }
+
+      .menu {
+        display: none;
+      }
+    </style>
+  </head>
+
+
 <body>
 
 <!-- Links (sit on top) -->
