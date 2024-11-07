@@ -20,7 +20,7 @@
         <p>Fill out your information and upload your manuscript.</p>
       </header>
   
-      <form id="dataInputForm" action="author_submitted.php" method="POST" class="w3-container w3-padding-large">
+      <form id="manuscript-upload" action="author-submitted.php" method="POST" class="w3-container w3-padding-large">
         <!-- First Name -->
         <div class="w3-margin-bottom">
           <label for="first_name" class="w3-text-dark-grey"><b>First name</b></label>
