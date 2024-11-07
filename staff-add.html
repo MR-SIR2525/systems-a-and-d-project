@@ -1,0 +1,83 @@
+<!-- Modal Container -->
+<div class="w3-modal" style="display:none" id="staff-add">
+  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+    <!-- Close Button -->
+    <div class="w3-center"><br>
+      <span onclick="document.getElementById('staff-add').style.display='none'"
+        class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close form">&times;</span>
+    </div>
+
+    <!-- Form Content -->
+    <form class="w3-container w3-padding-large" action="staff-add-test.php" id="emp-form" method="post">
+      <h2 class="w3-center">Add employee</h2>
+      <p class="w3-center">Please fill in this form to add a new employee.</p>
+      <hr class="w3-border-light-gray w3-margin-bottom">
+
+      <label for="fname" class="w3-text"><b>First Name</b></label>
+      <input class="w3-input w3-border w3-margin-bottom" type="text" name="fname"
+        required>
+
+      <label for="lname" class="w3-text"><b>Last Name</b></label>
+      <input class="w3-input w3-border w3-margin-bottom" type="text" name="lname"
+        required>
+
+      <label for="email" class="w3-text"><b>Email</b></label>
+      <input class="w3-input w3-border w3-margin-bottom" type="text" name="email" required>
+
+      <b id="psw-message" class="w3-text w3-red"></b>
+      <label for="psw" class="w3-text"><b>Password</b></label>
+      <input class="w3-input w3-border w3-margin-bottom" type="password" name="psw"
+        required>
+
+      <label for="psw-repeat" class="w3-text"><b>Repeat Password</b></label>
+      <input class="w3-input w3-border w3-margin-bottom" type="password" name="psw-repeat"
+        required>
+
+      <!-- <label class="w3-margin-bottom">
+        <input class="w3-check" type="checkbox" checked="checked" name="remember"> Remember me
+      </label> -->
+
+      <div class="w3-row-padding w3-margin-top">
+        <div class="w3-half">
+          <button type="button" class="w3-button w3-red w3-block"
+            onclick="document.getElementById('idstaff-add').style.display='none'">Cancel</button>
+        </div>
+        <div class="w3-half">
+          <button type="submit" class="w3-button w3-blue w3-block">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  // When the user clicks anywhere outside of the modal, close it
+  var modal = document.getElementById('staff-add');
+
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+</script>
+
+<script>
+  document.getElementById('emp-form').addEventListener('submit', function(event) {
+      const password = document.querySelector('input[name="psw"]').value;
+      const repeatPassword = document.querySelector('input[name="psw-repeat"]').value;
+      const pswMessage = document.getElementById('psw-message');
+
+      // Clear previous message
+      pswMessage.style.display = 'none';
+      pswMessage.textContent = '';
+
+      if (password !== repeatPassword) {
+        event.preventDefault(); // Prevent form submission
+        
+        // Display error message
+        pswMessage.textContent = 'Passwords do not match';
+        pswMessage.style.display = 'block';
+      }
+  });
+</script>
