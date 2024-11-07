@@ -87,7 +87,7 @@
 <div class="w3-sand w3-grayscale w3-large">
 
 <!-- Button Container -->
-<div class="w3-container" id="upload_container">
+<div class="w3-container w3-padding" id="upload_container">
   <div class="w3-content w3-center" style="max-width:700px">
     <form action="input.php" method="POST" class="center-form">
       <button class="w3-button w3-blue" type="submit">Upload a Manuscript</button>
@@ -100,10 +100,7 @@
 
 
 <!-- Footer -->
-<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-  <a href="/utilities/phpinfo.php">php info</a>
-</footer>
+<?php include 'footer.html'; ?>
 
 
 <!-- Including the Staff Login Modal here, just before the end of the body -->
