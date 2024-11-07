@@ -1,37 +1,45 @@
 <?php
-    require 'db.php'; // Database connection
+    session_start(); // Start the session
+
+    require 'utilities/db.php'; // Database connection
 
     // Collect login details from form submission
-    $login = $_POST['login']; // This could be either an email or a username
-    $password = $_POST['password']; // The password entered by the user
+    $username = isset($_POST['username']) ? $_POST['username'] : null;
+    $password = isset($_POST['psw']) ? $_POST['psw'] : null;
+    $remember = isset($_POST['remember']); // Checkbox for "Remember Me"
+
+    if (!$username || !$password) {
+        echo "you entered " . $username . " and " . $password;
+        die("Please enter both username/email and password.");
+    }
 
     // Query to select the user based on email or username
-    $sql = "SELECT emp_id, email, password FROM Employee WHERE email = ? OR username = ?";
-
-    // Prepare the statement
+    $sql = "SELECT emp_id, email, password FROM Employee WHERE email = ?";
     $stmt = $conn->prepare($sql);
-
-    // Check if the statement was prepared successfully
+    
     if ($stmt === false) {
         die("Error preparing the statement: " . $conn->error);
     }
 
-    // Bind the input variable for both email and username checks
-    $stmt->bind_param("ss", $login, $login);
-
-    // Execute the query
+    // Bind parameters for email check
+    $stmt->bind_param("s", $username); // Bind single parameter for username/email
     $stmt->execute();
-
-    // Bind the results
     $stmt->bind_result($emp_id, $email, $db_password);
 
-    // Check if a matching user was found
+    // Check if the user was found and verify password
     if ($stmt->fetch()) {
-        // Verify the password using password_verify
         if (password_verify($password, $db_password)) {
+            // Login successful
+            $_SESSION['user_id'] = $emp_id; // Store user ID in session
+            $_SESSION['user_email'] = $email; // Optionally store email
+
+            // If "Remember Me" is checked, set a cookie
+            if ($remember) {
+                // Set a cookie valid for 30 days
+                setcookie("user_id", $emp_id, time() + (30 * 24 * 60 * 60), "/");
+            }
+
             echo "Login successful: Welcome, " . $email;
-            // Here, you could start a session and set session variables
-            // e.g., $_SESSION['user_id'] = $emp_id;
         } else {
             echo "Invalid login credentials.";
         }
