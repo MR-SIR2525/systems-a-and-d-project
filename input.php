@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Company Data Input - Manuscript and Contract Management</title>
+    <title>Upload Manuscript | Kaitaia Publishing Collective</title>
     
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,23 +11,34 @@
 
 <div class="container">
     <header>
-        <h1>Personal Info and Manuscript</h1>
-        <p>Fill out the fields below to add author, manuscript, and contract information.</p>
+        <h1>Author Personal Info and Manuscript</h1>
+        <p>Fill out your information and upload your manuscript.</p>
     </header>
 
     <form id="dataInputForm" action="author_submitted.php" method="POST">
 
         <!-- Author Information Section -->
-        <div class="input-group">
+        <!-- <div class="input-group">
             <label for="authorName">Author Name</label>
             <input type="text" id="authorName" name="authorName" required placeholder="Enter Author's Full Name">
             <div class="tooltip">Required. Full name of the author submitting the manuscript.</div>
+        </div> -->
+
+        <!-- two inputs for first name and last name -->
+        <div class="input-group">
+            <label for="first_name">First name</label>
+            <input type="text" id="first_name" name="first_name" required placeholder="Enter first name">
         </div>
 
         <div class="input-group">
-            <label for="authorEmail">Author Email</label>
-            <input type="text" id="authorEmail" name="authorEmail" required placeholder="Enter Author's Email">
-            <div class="tooltip">Required. Must be a valid email address.</div>
+            <label for="last_name">Last name</label>
+            <input type="text" id="last_name" name="last_name" required placeholder="Enter last name">
+        </div>
+
+        <div class="input-group">
+            <label for="authorEmail">Email</label>
+            <input type="text" id="authorEmail" name="authorEmail" required placeholder="Enter email">
+            <div class="tooltip">Be sure to use an email we can reach you at.</div>
         </div>
 
         <!-- Manuscript Information Section -->
@@ -38,40 +49,9 @@
         </div>
 
         <div class="input-group">
-            <label for="submissionDate">Submission Date</label>
-            <input type="date" id="submissionDate" name="submissionDate" required>
-            <div class="tooltip">Required. Date when the manuscript was submitted.</div>
-        </div>
-
-        <div class="input-group">
             <label for="manuscriptDescription">Manuscript Description</label>
             <textarea id="manuscriptDescription" name="manuscriptDescription" rows="4" placeholder="Provide a short description of the manuscript"></textarea>
             <div class="tooltip">Optional. Brief description of the manuscript.</div>
-        </div>
-
-        <!-- Contract Information Section -->
-        <div class="input-group">
-            <label for="contractStatus">Contract Status</label>
-            <select id="contractStatus" name="contractStatus" required>
-                <option value="">Select Status</option>
-                <option value="pending">Pending</option>
-                <option value="signed">Signed</option>
-                <option value="completed">Completed</option>
-                <option value="canceled">Canceled</option>
-            </select>
-            <div class="tooltip">Required. Current status of the manuscript's contract.</div>
-        </div>
-
-        <div class="input-group">
-            <label for="contractStartDate">Contract Start Date</label>
-            <input type="date" id="contractStartDate" name="contractStartDate" required>
-            <div class="tooltip">Required. Start date of the contract.</div>
-        </div>
-
-        <div class="input-group">
-            <label for="contractEndDate">Contract End Date</label>
-            <input type="date" id="contractEndDate" name="contractEndDate">
-            <div class="tooltip">Optional. End date of the contract if available.</div>
         </div>
 
         <button type="submit">Submit Data</button>
