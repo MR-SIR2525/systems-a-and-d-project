@@ -14,7 +14,7 @@
     }
 
     // Query to select the user based on email or username
-    $sql = "SELECT emp_id, email, password FROM Employee WHERE email = ?";
+    $sql = "SELECT emp_id, first_name, email, password FROM Employee WHERE email = ?";
     $stmt = $conn->prepare($sql);
     
     if ($stmt === false) {
@@ -24,13 +24,14 @@
     // Bind parameters for email check
     $stmt->bind_param("s", $username); // Bind single parameter for username/email
     $stmt->execute();
-    $stmt->bind_result($emp_id, $email, $db_password);
+    $stmt->bind_result($emp_id, $first_name, $email, $db_password);
 
     // Check if the user was found and verify password
     if ($stmt->fetch()) {
         if (password_verify($password, $db_password)) {
             // Login successful
             $_SESSION['user_id'] = $emp_id; // Store user ID in session
+            $_SESSION['user_first_name'] = $first_name;
             $_SESSION['user_email'] = $email; // Optionally store email
 
             // If "Remember Me" is checked, set a cookie
