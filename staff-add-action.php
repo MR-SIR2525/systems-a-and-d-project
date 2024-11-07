@@ -1,11 +1,14 @@
 <?php
-    require 'db.php'; // Ensure this file sets up the $conn variable for the database connection
+    session_start(); // Start the session at the beginning
+
+    require 'utilities/db.php'; // Ensure this file sets up the $conn variable for the database connection
 
     // Collect form data
     $firstName = $_POST['fname'];
     $lastName = $_POST['lname'];
     $email = $_POST['email'];
     $password = $_POST['psw'];
+    // $remember = isset($_POST['remember']); // For "Remember Me" if using it
 
     // Hash the password
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
