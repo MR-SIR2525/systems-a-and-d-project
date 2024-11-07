@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>W3.CSS Template</title>
+<title>Kaitaia Publishing Collective | Home</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -39,7 +39,9 @@ body, html {
       <a href="#menu" class="w3-button w3-block w3-black">MENU</a>
     </div>
     <div class="w3-col s3">
-      <a href="staff-login.php" class="w3-button w3-block w3-black">Staff Login</a>
+      <!-- <a href="staff-login.php" class="w3-button w3-block w3-black">Staff Login</a> -->
+      <button onclick="document.getElementById('id01').style.display='block'" 
+        class="w3-button w3-block w3-black">Staff Login</button>
     </div>
   </div>
 </div>
@@ -66,10 +68,16 @@ body, html {
 <!-- End page content -->
 </div>
 
+
 <!-- Footer -->
 <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
 </footer>
+
+
+<!-- Including the Staff Login Modal here, just before the end of the body -->
+<?php include 'staff-login.php'; ?>
+
 
 <script>
   // Tabbed Menu
