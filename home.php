@@ -32,6 +32,9 @@
 
 
 <body>
+  <?php
+    session_start();
+  ?>
 
 <!-- Links (sit on top) -->
 <div class="w3-top">
@@ -46,11 +49,22 @@
       <button onclick="document.getElementById('staff-add').style.display='block'" 
         class="w3-button w3-block w3-black">Add Employee</button>
     </div>
-    <div class="w3-col s3">
-      <!-- <a href="staff-login.php" class="w3-button w3-block w3-black">Staff Login</a> -->
-      <button onclick="document.getElementById('id01').style.display='block'" 
-        class="w3-button w3-block w3-black">Staff Login</button>
-    </div>
+
+    <?php
+      if (isset($_SESSION['user_id'])) {
+        print
+          '<div class="w3-col s3">
+            <a href="#" class="w3-button w3-block w3-black">Welcome, ' . $_SESSION['user_first_name'] . '</a>
+          </div>';
+      }
+      else {
+        print
+          '<div class="w3-col s3">
+            <button onclick="document.getElementById(\'id01\').style.display=\'block\'" 
+              class="w3-button w3-block w3-black">Staff Login</button>
+          </div>';
+      }
+    ?>
   </div>
 </div>
 
