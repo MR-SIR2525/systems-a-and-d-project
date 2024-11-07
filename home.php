@@ -76,7 +76,7 @@ body, html {
 
 
 <!-- Including the Staff Login Modal here, just before the end of the body -->
-<?php include 'staff-login.php'; ?>
+<?php include 'staff-login.html'; ?>
 
 
 <script>
