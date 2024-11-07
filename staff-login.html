@@ -1,27 +1,31 @@
 <!-- Modal Login Form -->
 <div id="id01" class="modal">
-  <form class="modal-content animate" action="/action_page.php" method="post">
+  <form class="modal-content animate" action="/staff-login-secure.php" method="post">
       <div class="imgcontainer">
-          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login form">
+            <i class="fa fa-close"></i>
+          </span>
           <img src="assets/login-avatar.png" alt="Avatar" class="avatar">
       </div>
 
       <div class="container">
-          <label for="uname"><b>Username</b></label>
-          <input type="text" placeholder="Enter Username" name="uname" required>
+          <label for="uname"><b>Username or email</b></label>
+          <input type="text" placeholder="Enter your username or email" name="uname" required>
 
           <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" required>
-          
-          <button type="submit">Login</button>
+          <input type="password" placeholder="Enter password" name="psw" required>
+
           <label>
-              <input type="checkbox" checked="checked" name="remember"> Remember me
+            <input type="checkbox" name="remember"> Remember me
           </label>
+          <br>
+          
+          
       </div>
 
       <div class="container" style="background-color:#f1f1f1">
-          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-          <span class="psw">Forgot <a href="#">password?</a></span>
+        <button type="submit" class="w3-button w3-blue loginbtn">Login</button>
+        <span class="psw"><a href="#">Forgot password?</a></span>
       </div>
   </form>
 </div>
