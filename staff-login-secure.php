@@ -53,6 +53,6 @@
     $conn->close();
 
     // Redirect to the login page or home page
-    header("Location: home.php");
+    header("Location: employee-home.php");
     exit;
 ?>
