@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Kaitaia Publishing Collective | Home</title>
+    <title>Kaitaia Publishing Collective | Staff Home</title>
     <?php include 'templates/head-meta.html'; ?>
     <?php include 'templates/head-css.html'; ?>
 
