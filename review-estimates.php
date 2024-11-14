@@ -32,8 +32,8 @@
   <!-- Header and Table section -->
   <section class="w3-white w3-large px-48 pb-48">
     <header class="w3-container mt-55" id="home">
-      <h1 class="w3-center">Review Estimates for Approval/Rejection</h1>
-      <p class="w3-center w3-text-grey">Select a manuscript view an estimate for:</p>
+      <h1 class="w3-center">Approve or Reject Cost and Schedule Estimates</h1>
+      <p class="w3-center w3-text-grey">Select a manuscript to view an estimate for:</p>
     </header>
 
     <!-- Manuscripts Table -->
@@ -57,55 +57,48 @@
     </div>
   </section>
 
-  <!-- Approve/Deny Estimates Form -->
+  <!-- Approve/Deny Estimates Printout -->
   <section class="w3-light-grey w3-large px-64 pt-24 pb-48">
     <div>
       <h3>Selected: <b>The Great Adventure by John Doe</b></h3>
 
-      <form action="#" method="POST" class="w3-container w3-card w3-white w3-round w3-padding">
-        <!-- Display Cost Estimation -->
-        <label for="cost_estimation" class="w3-text-dark-grey"><b>Cost Estimation ($)</b></label>
-        <input type="text" id="cost_estimation" name="cost_estimation" class="w3-input w3-border w3-round w3-margin-bottom" 
-               value="$ 10,000" readonly>
-
-        <!-- Display Date Estimations -->
-        <label class="w3-text-dark-grey"><b>Date Estimation</b></label>
-        <div class="w3-row-padding">
-          <div class="w3-half w3-margin-bottom">
-            <label for="print_estimate" class="w3-medium">Time to Print Estimate (weeks):</label>
-            <input type="text" id="print_estimate" name="print_estimate" class="w3-input w3-border w3-round" 
-                   value="4" readonly>
-          </div>
-          <div class="w3-half w3-margin-bottom">
-            <label for="completion_date" class="w3-medium">Estimated Printing Completion Date:</label>
-            <input type="date" id="completion_date" name="completion_date" class="w3-input w3-border w3-round" 
-                   value="2024-12-15" readonly>
-          </div>
-          <div class="w3-half">
-            <label for="launch_date" class="w3-medium">Estimated Book Launch Date:</label>
-            <input type="date" id="launch_date" name="launch_date" class="w3-input w3-border w3-round" 
-                   value="2024-01-20" readonly>
-          </div>
-        </div>
-
-        <!-- Comments Box -->
-        <label for="review_comments" class="w3-text-dark-grey"><b>Reviewer Comments</b></label>
-        <textarea id="review_comments" name="review_comments" rows="4" class="w3-input w3-border w3-round w3-margin-bottom" 
-                  placeholder="I really like this one. Hope you approve. -Alan Bradley" readonly></textarea>
+      <div class="w3-container w3-card w3-white w3-round py-48 px-48">
+        <table class="w3-table w3-border-0">
+          <tr>
+            <td><b>Cost Estimation ($)</b></td>
+            <td>$ 10,000</td>
+          </tr>
+          <tr>
+            <td><b>Time to Print Estimate (weeks)</b></td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td><b>Estimated Printing Completion Date</b></td>
+            <td>2024-12-15</td>
+          </tr>
+          <tr>
+            <td><b>Estimated Book Launch Date</b></td>
+            <td>2024-01-20</td>
+          </tr>
+          <tr>
+            <td><b>Comments</b></td>
+            <td>I really like this one. Hope you approve. -Alan Bradley</td>
+          </tr>
+        </table>
+        <br>
 
         <!-- Approval Section -->
         <div class="w3-row w3-margin-top">
-          <div class="w3-half">
+          <div class="w3-left">
             <button type="submit" name="approval" value="approve" class="w3-button w3-green w3-round w3-block">Approve</button>
           </div>
-          <div class="w3-half">
+          <div class="w3-right">
             <button type="submit" name="approval" value="deny" class="w3-button w3-red w3-round w3-block">Deny</button>
           </div>
         </div>
-      </form>
+      </div>
     </div>
   </section>
-
 
 
   <!-- Footer -->
