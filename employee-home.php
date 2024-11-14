@@ -47,6 +47,14 @@
     <!-- Custom Flexbox Menu Grid -->
     <div class="menu-grid">
       <?php
+        $menu_links = array(
+          "manuscripts-awaiting-eval.php",
+          "cost-schedule-estimation.php",
+          "review-estimates.php",
+          "contracts.php",
+          "publishing-status.php"
+        );
+
         $menu_items = array(
           "Manuscripts Awaiting Evaluation",
           "Cost and Schedule Estimation",
@@ -66,7 +74,7 @@
         foreach ($menu_items as $index => $item) {
           print '
             <div class="menu-card w3-card w3-round-large w3-white w3-hover-shadow w3-hover-light-grey">
-              <a href="#link' . $index . '" class="menu-card-link">
+              <a href="' . $menu_links[$index] . '" class="menu-card-link">
                 <h3 class="w3-text-dark-grey">' . $item . '</h3>
                 <p class="w3-text-grey w3-medium">' . $item_desc[$index] . '</p>
               </a>
