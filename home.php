@@ -44,7 +44,7 @@
 </header>
 
 <!-- Add a background color and large text to the whole page -->
-<div class="w3-sand w3-grayscale w3-large">
+<div class="w3-sand w3-large">
 
 <!-- Button Container -->
 <div class="w3-container w3-padding" id="upload_container">
