@@ -75,7 +75,63 @@
     padding-right: 64px;
 }
 
+.py-0 {
+    padding-top: 0;
+    padding-bottom: 0;
+}
 
+.py-10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.py-16 {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.py-20 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.py-24 {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.py-32 {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.py-48 {
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+.py-64 {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+.pb-0 {padding-bottom: 0;}
+.pb-10 {padding-bottom: 10px;}
+.pb-16 {padding-bottom: 16px;}
+.pb-20 {padding-bottom: 20px;}
+.pb-24 {padding-bottom: 24px;}
+.pb-32 {padding-bottom: 32px;}
+.pb-48 {padding-bottom: 48px;}
+.pb-64 {padding-bottom: 64px;}
+
+.pt-0 {padding-top: 0;}
+.pt-10 {padding-top: 10px;}
+.pt-16 {padding-top: 16px;}
+.pt-20 {padding-top: 20px;}
+.pt-24 {padding-top: 24px;}
+.pt-32 {padding-top: 32px;}
+.pt-48 {padding-top: 48px;}
+.pt-64 {padding-top: 64px;}
 
 
 /* footer stuff */
