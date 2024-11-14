@@ -13,6 +13,13 @@
     align-items: center;
 }
 
+.hover-enlarge:hover {
+    transform: scale(1.05);
+}
+
+.hover-enlarge-1:hover {
+    transform: scale(1.01);
+}
 
 .br-10 {
     border-radius: 10px;
