@@ -1,5 +1,5 @@
 # Todo
-1. Finish last two emp menu cards
+1. Finish last two employee menu cards
     - Draft and send contracts
     - Publishing status
   
