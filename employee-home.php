@@ -37,8 +37,8 @@
   <?php include 'templates/nav.php'; ?>
 
 
-  <!-- background color and large text to the whole page -->
-  <div class="w3-light-grey w3-grayscale w3-large">
+  <!-- background color and large text to the whole section -->
+  <section class="w3-sand w3-grayscale w3-large px-48">
     <header class="w3-container mt-55" id="home">
       <h1>Kaitaia Publishing Collective - Employee Home</h1>
     </header>
@@ -58,8 +58,8 @@
 
           for ($i = 0; $i < count($menu_items); $i++) {
             print '
-              <div class="w3-third w3-margin-bottom" style="padding:0px">
-                <a href="#link' . $i . '" class="w3-card br-10 w3-hover-grey w3-white w3-block">
+              <div class="w3-third w3-margin-bottom">
+                <a href="#link' . $i . '" class="w3-card-4 br-10 w3-hover-grey w3-white w3-block">
                   <h3 class="w3-text-dark-grey">' . $menu_items[$i] . '</h3>
                 </a>
               </div>
@@ -70,7 +70,7 @@
         
       </div>
     </div>
-  </div>
+  </section>
   <!-- End page content -->
 
 
