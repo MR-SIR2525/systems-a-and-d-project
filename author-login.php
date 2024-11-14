@@ -1,26 +1,40 @@
-<?php
-    require_once 'db.php';
+<!-- Author Login Form -->
+<div id="authorLoginModal" class="modal">
+  <form class="modal-content animate" action="/author-login-secure.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('authorLoginModal').style.display='none'" class="close" title="Close login form">
+        <i class="fa fa-close"></i>
+      </span>
+      <img src="assets/login-avatar.png" alt="Avatar" class="avatar">
+    </div>
 
-    // Insert data
-    $sql = "INSERT INTO authors (first_name, last_name, email) VALUES ('John', 'Doe', 'john.doe@example.com')";
-    if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+    <div class="container">
+      <label for="username"><b>Username or email</b></label>
+      <input type="text" placeholder="Enter your username or email" name="username" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter password" name="psw" required>
+
+      <label>
+        <input type="checkbox" name="remember"> Remember me
+      </label>
+      <br>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="submit" class="w3-button w3-blue loginbtn">Login</button>
+      <span class="psw"><a href="#">Forgot password?</a></span>
+    </div>
+  </form>
+</div>
+
+<script>
+  // When the user clicks anywhere outside of the modal, close it
+  var modal = document.getElementById('authorLoginModal');
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
     }
-
-    // Select data
-    $sql = "SELECT id, first_name, last_name FROM authors";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-            echo "id: " . $row["id"]. " - Name: " . $row["first_name"]. " " . $row["last_name"]. "<br>";
-        }
-    } else {
-        echo "0 results";
-    }
-    $conn->close();
-
-?>
+  }
+</script>
