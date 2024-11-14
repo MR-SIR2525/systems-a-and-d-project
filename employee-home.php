@@ -38,54 +38,35 @@
 
 
   <!-- background color and large text to the whole page -->
-  <div class="w3-sand w3-grayscale w3-large">
+  <div class="w3-light-grey w3-grayscale w3-large">
     <header class="w3-container mt-55" id="home">
       <h1>Kaitaia Publishing Collective - Employee Home</h1>
     </header>
-    
+
     <!-- Menu Grid -->
     <div class="w3-container w3-padding-32">
       <div class="w3-row-padding w3-center">
 
-        <!-- First Row -->
-        <div class="w3-third w3-margin-bottom">
-          <a href="#link1" class="w3-card w3-round-large w3-hover-shadow w3-white w3-padding">
-            <h3 class="w3-text-dark-grey">Menu Item 1</h3>
-            <p class="w3-text-grey">Description for menu item 1.</p>
-          </a>
-        </div>
-        <div class="w3-third w3-margin-bottom">
-          <a href="#link2" class="w3-card w3-round-large w3-hover-shadow w3-white w3-padding">
-            <h3 class="w3-text-dark-grey">Menu Item 2</h3>
-            <p class="w3-text-grey">Description for menu item 2.</p>
-          </a>
-        </div>
-        <div class="w3-third w3-margin-bottom">
-          <a href="#link3" class="w3-card w3-round-large w3-hover-shadow w3-white w3-padding">
-            <h3 class="w3-text-dark-grey">Menu Item 3</h3>
-            <p class="w3-text-grey">Description for menu item 3.</p>
-          </a>
-        </div>
+        <?php
+          $menu_items = array(
+            "Manuscripts Awaiting Evaluation",
+            "Cost and Schedule Estimation",
+            "Approve/Deny Estimates",
+            "Draft and Send Contracts",
+            "Publishing Status"
+          );
 
-        <!-- Second Row -->
-        <div class="w3-third w3-margin-bottom">
-          <a href="#link4" class="w3-card w3-round-large w3-hover-shadow w3-white w3-padding">
-            <h3 class="w3-text-dark-grey">Menu Item 4</h3>
-            <p class="w3-text-grey">Description for menu item 4.</p>
-          </a>
-        </div>
-        <div class="w3-third w3-margin-bottom">
-          <a href="#link5" class="w3-card w3-round-large w3-hover-shadow w3-white w3-padding">
-            <h3 class="w3-text-dark-grey">Menu Item 5</h3>
-            <p class="w3-text-grey">Description for menu item 5.</p>
-          </a>
-        </div>
-        <div class="w3-third w3-margin-bottom">
-          <a href="#link6" class="w3-card w3-round-large w3-hover-shadow w3-white w3-padding">
-            <h3 class="w3-text-dark-grey">Menu Item 6</h3>
-            <p class="w3-text-grey">Description for menu item 6.</p>
-          </a>
-        </div>
+          for ($i = 0; $i < count($menu_items); $i++) {
+            print '
+              <div class="w3-third w3-margin-bottom" style="padding:0px">
+                <a href="#link' . $i . '" class="w3-card br-10 w3-hover-grey w3-white w3-block">
+                  <h3 class="w3-text-dark-grey">' . $menu_items[$i] . '</h3>
+                </a>
+              </div>
+            ';
+          }
+
+        ?>
         
       </div>
     </div>
