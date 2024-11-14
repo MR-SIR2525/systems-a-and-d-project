@@ -86,3 +86,49 @@
 .footer-link:hover {
     text-decoration: underline;
 }
+
+
+/*********** Styling for menu item cards ***********/
+/* Flexbox grid container for menu cards */
+.menu-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Space between cards */
+    padding: 20px;
+  }
+  
+  /* Individual menu cards styling */
+  .menu-card {
+    flex: 1 1 calc(33.333% - 40px); /* 3 cards per row with spacing */
+    max-width: 300px; /* Optional maximum width for each card */
+    min-width: 200px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+    transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+    text-align: center;
+  }
+  
+  .menu-card-link {
+    display: block;
+    text-decoration: none; /* Remove underlines */
+    padding: 20px;
+    color: inherit; /* Inherit text color */
+  }
+  
+  .menu-card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+  
+  /* Responsive behavior for smaller screens */
+  @media (max-width: 768px) {
+    .menu-card {
+      flex: 1 1 calc(50% - 40px); /* 2 cards per row on medium screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .menu-card {
+      flex: 1 1 100%; /* Full width on small screens */
+    }
+  }
+  
