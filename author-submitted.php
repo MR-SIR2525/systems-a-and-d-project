@@ -1,50 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Company Data Input - Manuscript and Contract Management</title>
+  <title>Author Upload Manuscript | Kaitaia Publishing Collective</title>
+  <?php include 'templates/head-meta.html'; ?>
+  <?php include 'templates/head-css.html'; ?>
 
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
-<div class="container">
-    <header>
-        <h1>Manuscript Successfully Submitted</h1>
-        <p>You'll hear from us soon!</p>
-    </header>
-
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Assuming you're posting these fields from the form
-        $authorName = $_POST['authorName'];
-        $authorEmail = $_POST['authorEmail'];
-        $manuscriptTitle = $_POST['manuscriptTitle'];
-        $submissionDate = $_POST['submissionDate'];
-        $manuscriptDescription = isset($_POST['manuscriptDescription']) ? $_POST['manuscriptDescription'] : '';
-        $contractStatus = $_POST['contractStatus'];
-        $contractStartDate = $_POST['contractStartDate'];
-        $contractEndDate = isset($_POST['contractEndDate']) ? $_POST['contractEndDate'] : '';
-
-        // You can now use these variables to store data in a database, or perform other actions.
-        
-        // Simple output to show what was submitted
-        echo "Author Name: " . $authorName . "<br>";
-        echo "Author Email: " . $authorEmail . "<br>";
-        echo "Manuscript Title: " . $manuscriptTitle . "<br>";
-        echo "Submission Date: " . $submissionDate . "<br>";
-        echo "Manuscript ID: " . rand(1000000000, 9999999999) . "<br>";
-        echo "Contract Status: " . $contractStatus . "<br>";
-        echo "Contract Start Date: " . $contractStartDate . "<br>";
-        echo "Contract End Date: " . $contractEndDate . "<br>";
-    } else {
-        echo "No data submitted.";
-    }
-    ?>
 
 
-</div>
+<body class="w3-light-grey">
+  <?php include 'templates/nav.php'; ?>
+
+  <section class="w3-content w3-margin-top w3-padding-top-64 flex-center">
+    <div class="w3-card-4 w3-white w3-round-large w3-padding form-card">
+      <header class="w3-center w3-border-bottom w3-border-red w3-padding-16">
+        <h2 class="w3-text-dark-grey">Author Personal Info and Manuscript</h2>
+        <p></p>
+      </header>
+
+      <?php
+        session_start();
+        require 'utilities/db.php'; // Make sure this includes your database connection setup
+
+        // Check if the form was submitted
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // Collect form data
+            $firstName = $_POST['first_name'];
+            $lastName = $_POST['last_name'];
+            $email = $_POST['authorEmail'];
+            $title = $_POST['manuscriptTitle'];
+            $description = $_POST['manuscriptDescription'];
+
+            // Prepare SQL to insert the data
+            $sql = "INSERT INTO Manuscripts (first_name, last_name, email, title, description) 
+            VALUES (?, ?, ?, ?, ?, ?)";
+            $stmt = $conn->prepare($sql);
+
+            if ($stmt === false) {
+                die("Error preparing the statement: " . $conn->error);
+            }
+
+            // Bind parameters to the statement
+            $stmt->bind_param("sssss", $firstName, $lastName, $email, $title, $description);
+
+            // Execute the query
+            if ($stmt->execute()) {
+                echo "Manuscript uploaded successfully!";
+            } else {
+                echo "Error: " . $stmt->error;
+            }
+
+            // Close the statement and connection
+            $stmt->close();
+          }
+      ?>
+
+  
+      <!-- Success/Error Message -->
+      <div id="message" class="w3-margin-top w3-padding w3-center w3-round w3-text-white">
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <?php include 'templates/footer.html'; ?>
+
+  <!-- 
+  <script>
+      document.getElementById("dataInputForm").addEventListener("submit", function(event) {
+          event.preventDefault();
+          let form = event.target;
+          let allFieldsValid = form.checkValidity();
+
+          // Get message element
+          let message = document.getElementById("message");
+
+          if (allFieldsValid) {
+              message.textContent = "Successfully Submitted!";
+              message.className = "message success";
+          } else {
+              message.textContent = "Error: Please fill out all required fields correctly.";
+              message.className = "message error";
+          }
+          
+          message.style.display = "block";
+      });
+  </script> -->
 
 </body>
+
 </html>
