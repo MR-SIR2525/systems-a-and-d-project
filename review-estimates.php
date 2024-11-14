@@ -82,7 +82,7 @@
           </tr>
           <tr>
             <td><b>Comments</b></td>
-            <td>I really like this one. Hope you approve. -Alan Bradley</td>
+            <td>I really like this one. Hope you approve. -Alan Bradley.<br>Give the author a 5% discount (he's a friend).  -Maria</td>
           </tr>
         </table>
         <br>
