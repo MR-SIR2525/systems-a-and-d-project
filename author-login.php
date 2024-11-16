@@ -1,18 +1,21 @@
 <!-- Author Login Form -->
 <div id="authorLoginModal" class="modal">
-  <form class="modal-content animate" action="/author-login-secure.php" method="post">
+  <form class="modal-content animate w3-card w3-round-large w3-white" action="/author-login-secure.php" method="post">
     <div class="imgcontainer">
+      <h1 class="mt-0">Author Login</h1>
+
       <span onclick="document.getElementById('authorLoginModal').style.display='none'" class="close" title="Close login form">
         <i class="fa fa-close"></i>
       </span>
-      <img src="assets/login-avatar.png" alt="Avatar" class="avatar">
+      
+      <img src="assets/login-avatar.png" alt="Avatar" class="avatar" style="width: 20%">
     </div>
 
     <div class="container">
-      <label for="username"><b>Username or email</b></label>
+      <label for="username">Email</label>
       <input type="text" placeholder="Enter your username or email" name="username" required>
 
-      <label for="psw"><b>Password</b></label>
+      <label for="psw">Password</label>
       <input type="password" placeholder="Enter password" name="psw" required>
 
       <label>
