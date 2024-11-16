@@ -1,11 +1,35 @@
 <div class="w3-top">
   <div class="w3-row w3-padding w3-black">
     <div class="w3-col s3">
-      <a href="/home.php" class="w3-button w3-block w3-black">HOME</a>
+      <?php
+        require 'utilities/db.php'; // Database connection
+        
+        if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
+          $stmt = $conn->prepare("SELECT email FROM employee WHERE emp_id = ?");
+          $stmt->bind_param("i", $_SESSION['user_id']);
+          $stmt->execute();
+          $stmt->bind_result($db_email);
+
+          $isEmployee = false;
+          if ($stmt->fetch() && $_SESSION['user_email'] == $db_email) {
+            $isEmployee = true;
+            print '
+              <a href="/employee-home.php" class="w3-button w3-block w3-black" title="Employee Home page">
+                KAITAIA PUBLISHING COLLECTIVE
+              </a>';
+          }
+          else {
+            print '
+              <a href="/home.php" class="w3-button w3-block w3-black" title="Go to Home page">
+                KAITAIA PUBLISHING COLLECTIVE
+              </a>';
+          }
+        }        
+      ?>
     </div>
 
     <div class="w3-col s3">
-      <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
+      <a href="home.php#about" class="w3-button w3-block w3-black">ABOUT</a>
     </div>
 
     <div class="w3-col s3">
@@ -14,7 +38,7 @@
     </div>
 
     <?php
-      if (isset($_SESSION['user_id'])) {
+      if ($isEmployee) {
         print
           '<div class="w3-col s3">
             <div class="w3-dropdown-hover w3-block">
@@ -27,10 +51,10 @@
           </div>';
       }
       else {
-        print
-          '<div class="w3-col s3">
-            <button onclick="document.getElementById(\'id01\').style.display=\'block\'" 
-              class="w3-button w3-block w3-black">Staff Login</button>
+        print '
+          <div class="w3-col s3">
+            <button onclick="document.getElementById(\'authorLoginModal\').style.display=\'block\'" 
+              class="w3-button w3-block w3-black">Author Login</button>
           </div>';
       }
     ?>
