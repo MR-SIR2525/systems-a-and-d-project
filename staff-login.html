@@ -1,8 +1,8 @@
 <!-- Modal Login Form -->
-<div id="id01" class="modal">
+<div id="staffLoginModal" class="modal">
   <form class="modal-content animate" action="/staff-login-secure.php" method="post">
     <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login form">
+      <span onclick="document.getElementById('staffLoginModal').style.display='none'" class="close" title="Close login form">
         <i class="fa fa-close"></i>
       </span>
       <img src="assets/login-avatar.png" alt="Avatar" class="avatar">
@@ -30,7 +30,7 @@
 
 <script>
   // When the user clicks anywhere outside of the modal, close it
-  var modal = document.getElementById('id01');
+  var modal = document.getElementById('staffLoginModal');
 
   window.onclick = function (event) {
     if (event.target == modal) {
