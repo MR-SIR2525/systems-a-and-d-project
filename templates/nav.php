@@ -54,7 +54,7 @@
         print '
           <div class="w3-col s3">
             <button onclick="document.getElementById(\'authorLoginModal\').style.display=\'block\'" 
-              class="w3-button w3-block w3-black">Author Login</button>
+              class="w3-button w3-block w3-black">Author Login/Signup</button>
           </div>';
       }
     ?>
