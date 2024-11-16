@@ -102,7 +102,7 @@
 
 
   <!-- Footer -->
-  <?php include 'templates/footer.html'; ?>
+  <?php include 'templates/footer.php'; ?>
 
 
   <!-- Including the Staff Login Modal here, just before the end of the body -->

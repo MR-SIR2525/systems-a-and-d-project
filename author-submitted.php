@@ -67,7 +67,7 @@
 
 
   <!-- Footer -->
-  <?php include 'templates/footer.html'; ?>
+  <?php include 'templates/footer.php'; ?>
 
   <!-- 
   <script>

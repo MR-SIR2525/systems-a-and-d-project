@@ -81,7 +81,7 @@
 
 
   <!-- Footer -->
-  <?php include 'templates/footer.html'; ?>
+  <?php include 'templates/footer.php'; ?>
 
 
   <!-- Including modals here, just before the end of the body -->
