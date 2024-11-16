@@ -4,13 +4,13 @@
       <?php
         require 'utilities/db.php'; // Database connection
         
+        $isEmployee = false;
         if (isset($_SESSION['user_id']) && isset($_SESSION['user_email'])) {
           $stmt = $conn->prepare("SELECT email FROM employee WHERE emp_id = ?");
           $stmt->bind_param("i", $_SESSION['user_id']);
           $stmt->execute();
           $stmt->bind_result($db_email);
 
-          $isEmployee = false;
           if ($stmt->fetch() && $_SESSION['user_email'] == $db_email) {
             $isEmployee = true;
             print '
@@ -18,13 +18,13 @@
                 KAITAIA PUBLISHING COLLECTIVE
               </a>';
           }
-          else {
-            print '
-              <a href="/home.php" class="w3-button w3-block w3-black" title="Go to Home page">
-                KAITAIA PUBLISHING COLLECTIVE
-              </a>';
-          }
-        }        
+        }
+        if (!$isEmployee) {
+          print '
+            <a href="/home.php" class="w3-button w3-block w3-black" title="Go to Home page">
+              KAITAIA PUBLISHING COLLECTIVE
+            </a>';
+        }
       ?>
     </div>
 
