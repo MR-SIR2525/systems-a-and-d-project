@@ -35,6 +35,15 @@
   <!-- Nav Links (sit on top) -->
   <?php include 'templates/nav.php'; ?>
 
+  <!-- Error Banner -->
+  <div id="error-banner" class="w3-modal" style="display: none; background-color: rgba(0, 0, 0, 0.4);">
+    <div class="w3-panel w3-card w3-black w3-round-large w3-center w3-padding-16" style="width: 100%; max-width: 600px; margin: 20px auto;">
+      <p id="error-message" class="w3-large w3-text-red"></p>
+      <button class="w3-button w3-light-grey w3-round" onclick="closeErrorBanner()">Dismiss</button>
+    </div>
+  </div>
+
+
   <!-- Header with image -->
   <header class="bgimg w3-display-container w3-grayscale-min" id="home">
     <div class="w3-display-middle w3-center">
@@ -112,6 +121,28 @@
     }
     document.getElementById("myLink").click();
   </script>
+
+  <!-- Catch login errors -->
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('login_error')) {
+      document.getElementById('authorLoginModal').style.display='block';
+      const usernameLabel = document.getElementById('author-login-info');
+      const errMsgSpan = document.createElement('p');
+      errMsgSpan.textContent = ' Invalid login credentials. Please try again.';
+      errMsgSpan.classList.add('w3-text-red');
+      usernameLabel.appendChild(errMsgSpan);
+    }
+    else if (urlParams.has('login-error')) {
+      document.getElementById('staffLoginModal').style.display='block';
+      const staffLoginInputsC = document.getElementById('staffLoginInputsC');
+      const errMsgP = document.createElement('p');
+      errMsgP.textContent = 'Invalid login credentials. Please try again.';
+      errMsgP.classList.add('w3-text-red');
+      staffLoginInputsC.insertBefore(errMsgP, staffLoginInputsC.firstChild);
+    }
+  </script>
+
 
 </body>
 </html>

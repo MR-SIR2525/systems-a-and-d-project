@@ -45,21 +45,19 @@
 
       // Redirect to the author dashboard or home page
       header("Location: home.php");
-      exit;
-    } 
+    }
     else {
       echo "Invalid login credentials.";
+      header("Location: home.php?login_error");
     }
   } 
   else {
     echo "No user found with those login details.";
+    header("Location: home.php?login_error");
   }
 
   // Close statement and connection
   $stmt->close();
   $conn->close();
-
-  // Redirect back to the login page on failure
-  header("Location: author-login.php?error=1");
 
 ?>

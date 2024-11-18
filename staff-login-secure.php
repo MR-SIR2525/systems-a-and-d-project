@@ -41,18 +41,19 @@
             }
 
             echo "Login successful: Welcome, " . $email;
-        } else {
+            header("Location: employee-home.php");
+        } 
+        else {
             echo "Invalid login credentials.";
+            header("Location: home.php?login-error");
         }
-    } else {
+    } 
+    else {
         echo "No user found with those login details.";
+        header("Location: home.php?login-error");
     }
 
     // Close statement and connection
     $stmt->close();
     $conn->close();
-
-    // Redirect to the login page or home page
-    header("Location: employee-home.php");
-    exit;
 ?>
