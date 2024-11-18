@@ -38,7 +38,7 @@
 
 
   <!-- background color and large text to the whole section -->
-  <section class="w3-light-grey w3-grayscale w3-large px-48 w3-container">
+  <section class="w3-light-grey w3-grayscale w3-large px-48 w3-container pb-64">
     <header class="w3-container mt-55" id="home">
       <h1 class="w3-center">Employee Home</h1>
       <p class="w3-center w3-text-grey">Select a menu card to get started:</p>
