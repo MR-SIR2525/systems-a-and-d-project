@@ -51,28 +51,28 @@
   var modal = document.getElementById('author-signup');
 
   window.onclick = function(event) {
-      if (event.target == modal) {
-          modal.style.display = "none";
-      }
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
   }
 </script>
 
 <script>
   document.getElementById('emp-form').addEventListener('submit', function(event) {
-      const password = document.getElementById('psw').value;
-      const repeatPassword = document.getElementById('psw-repeat').value;
-      const pswMessage = document.getElementById('psw-message');
+    const password = document.getElementById('psw').value;
+    const repeatPassword = document.getElementById('psw-repeat').value;
+    const pswMessage = document.getElementById('psw-message');
 
-      // Reset the message each time the form is submitted
-      pswMessage.textContent = '';
-      pswMessage.style.display = 'none';
+    // Reset the message each time the form is submitted
+    pswMessage.textContent = '';
+    pswMessage.style.display = 'none';
 
-      if (password !== repeatPassword) {
-          event.preventDefault(); // Prevent form submission
+    if (password !== repeatPassword) {
+      event.preventDefault(); // Prevent form submission
 
-          // Display error message if passwords don't match
-          pswMessage.textContent = 'Passwords do not match. You entered "' + password + '" and "' + repeatPassword + '"';
-          pswMessage.style.display = 'block';
-      }
+      // Display error message if passwords don't match
+      pswMessage.textContent = 'Passwords do not match. You entered "' + password + '" and "' + repeatPassword + '"';
+      pswMessage.style.display = 'block';
+    }
   });
 </script>
