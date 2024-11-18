@@ -42,20 +42,46 @@
     </div>
   </header>
 
-  <!-- Add a background color and large text to the whole page -->
-  <div class="w3-sand w3-large">
+  <div class="w3-large w3-sand">
+    <!-- Button Container -->
+    <section class="w3-container pb-48" id="upload_container">
+      <div class="w3-content w3-center" style="max-width:700px">
+        <form action="author-upload-manuscript.php" method="POST" class="center-form">
+          <p>
+            Are you an author looking to get your work published? Upload your manuscript and 
+            we'll review it. If we like it, we'll publish it!
+          </p>
+          <button class="w3-button w3-blue" type="submit">Upload a Manuscript</button>
+        </form>
+      </div>
+    </section>
+    
+    <hr>
 
-  <!-- Button Container -->
-  <div class="w3-container w3-padding" id="upload_container">
-    <div class="w3-content w3-center" style="max-width:700px">
-      <form action="author-upload-manuscript.php" method="POST" class="center-form">
-        <button class="w3-button w3-blue" type="submit">Upload a Manuscript</button>
-      </form>
-    </div>
+    <!-- About Container -->
+    <section class="w3-container pt-24" id="about">
+      <div class="w3-content w3-center mb-64" style="max-width:700px">
+        <h3 class="w3-left-align">
+          <span>About Kaitaia Publishing Collective</span>
+        </h3>
+        <p class="w3-left-align">
+          Kaitaia Publishing Collective is a publishing company based in New Zealand. We publish books, 
+          short stories, poetry, and non-fiction.
+        </p>
+        <p class="w3-left-align">
+          Our goal is to provide writers with a platform to publish their work. Our chairwoman,
+          Maria, grew up in a small town in New Zealand, surrounded by a community of storytellers. 
+          Inspired by the rich tapestry of tales she heard, she dreamed of sharing these voices 
+          with the world. Recognizing the challenges faced by emerging authors, Maria founded 
+          Kaitaia Publishing Collective to break down barriers and provide a welcoming platform 
+          for writers to publish their work. The team at Kaitaia Publishing share a common passion 
+          for literature, stories and learning, and want to give authors the path to sharing their
+          stories with the world, and to celebrate the narratives of New Zealand.
+        </p>
+      </div>
+    </section>
   </div>
-
   <!-- End page content -->
-  </div>
 
 
   <!-- Footer -->
