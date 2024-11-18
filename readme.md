@@ -1,12 +1,3 @@
-# Todo
-1. Finish last two employee menu cards
-    - Draft and send contracts
-    - Publishing status
-  
-2. Change navigation to have "Author Login", move Staff Login to footer.
+# Manuscript and Contracts Management System
 
-3. Revist home page look.
-
-4. Functionality:
-    - Author login
-    - Pressing upload button for uploading manuscript
+Group 1's Management Information System for Kaitaia Publishing Collective, for Systems Analysis and Design.
