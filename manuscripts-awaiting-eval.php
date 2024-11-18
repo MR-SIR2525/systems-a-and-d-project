@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Kaitaia Publishing Collective | Manuscripts Awaiting Evaluation</title>
+  <title>Manuscripts Awaiting Evaluation | Kaitaia Publishing Collective</title>
   <?php include 'templates/head-meta.html'; ?>
   <?php include 'templates/head-css.html'; ?>
 
