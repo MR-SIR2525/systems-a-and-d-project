@@ -25,6 +25,12 @@
               KAITAIA PUBLISHING COLLECTIVE
             </a>';
         }
+
+        // check if author is signed in
+        $isAuthor = false;
+        if (isset($_SESSION['author_id']) && isset($_SESSION['author_first_name'])) {
+          $isAuthor = true;
+        }
       ?>
     </div>
 
@@ -67,11 +73,25 @@
             &nbsp;
           </div>';
 
-        print '
+        if ($isAuthor) {
+          print '
+          <div class="w3-col s3">
+            <div class="w3-dropdown-hover w3-block">
+              <button class="w3-button w3-block w3-black">Welcome, ' . $_SESSION['author_first_name'] . '</button>
+              <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                <a href="#" class="w3-bar-item w3-button">Profile</a>
+                <a href="logout.php" class="w3-bar-item w3-button">Logout</a>
+              </div>
+            </div>
+          </div>';
+        } 
+        else {
+          print '
           <div class="w3-col s3">
             <button onclick="document.getElementById(\'authorLoginModal\').style.display=\'block\'" 
               class="w3-button w3-block w3-black">Author Login/Signup</button>
           </div>';
+        }
       }
     ?>
   </div>

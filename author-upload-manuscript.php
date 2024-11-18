@@ -11,7 +11,10 @@
 
 
 <body class="w3-light-grey">
-  <?php include 'templates/nav.php'; ?>
+  <?php
+    session_start();
+    include 'templates/nav.php'; 
+  ?>
 
   <section class="w3-content w3-margin-top w3-padding-top-64 flex-center">
     <div class="w3-card-4 w3-white w3-round-large w3-padding form-card">
@@ -82,27 +85,6 @@
   <!-- Footer -->
   <?php include 'templates/footer.php'; ?>
 
-  <!-- 
-  <script>
-      document.getElementById("dataInputForm").addEventListener("submit", function(event) {
-          event.preventDefault();
-          let form = event.target;
-          let allFieldsValid = form.checkValidity();
-
-          // Get message element
-          let message = document.getElementById("message");
-
-          if (allFieldsValid) {
-              message.textContent = "Successfully Submitted!";
-              message.className = "message success";
-          } else {
-              message.textContent = "Error: Please fill out all required fields correctly.";
-              message.className = "message error";
-          }
-          
-          message.style.display = "block";
-      });
-  </script> -->
 
 </body>
 
