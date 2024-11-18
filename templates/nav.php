@@ -32,13 +32,23 @@
       <a href="home.php#about" class="w3-button w3-block w3-black">ABOUT</a>
     </div>
 
-    <div class="w3-col s3">
-      <button onclick="document.getElementById('staff-add').style.display='block'" 
-        class="w3-button w3-block w3-black" title="Add new Employee">Add Employee</button>
-    </div>
-
     <?php
+      // last two buttons:
+      // if employee
+      //  - add employee button
+      //  - Welcome + dropdown
+      //
+      // else
+      //  - empty space
+      //  - author login
+
       if ($isEmployee) {
+        print '
+          <div class="w3-col s3">
+            <button onclick="document.getElementById(\'staff-add\').style.display=\'block\'" 
+              class="w3-button w3-block w3-black" title="Add new Employee">Add Employee</button>
+          </div>';
+
         print
           '<div class="w3-col s3">
             <div class="w3-dropdown-hover w3-block">
@@ -51,6 +61,12 @@
           </div>';
       }
       else {
+        // fill empty button space for non-employees
+        print '
+          <div class="w3-col s3">
+            &nbsp;
+          </div>';
+
         print '
           <div class="w3-col s3">
             <button onclick="document.getElementById(\'authorLoginModal\').style.display=\'block\'" 
