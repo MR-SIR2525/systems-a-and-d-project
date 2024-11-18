@@ -12,8 +12,11 @@
     </div>
 
     <div class="container">
-      <label for="username">Email</label>
-      <input type="text" placeholder="Enter your username or email" name="username" required>
+      <button class="w3-button w3-green w3-right w3-card" type="button" 
+        onclick="signupInstead();">Sign Up Instead</button>
+      <br>
+      <label for="username" class="w3-left">Email</label>
+      <input type="text" placeholder="Enter your email" name="username" required>
 
       <label for="psw">Password</label>
       <input type="password" placeholder="Enter password" name="psw" required>
@@ -24,9 +27,9 @@
       <br>
     </div>
 
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="submit" class="w3-button w3-blue loginbtn">Login</button>
-      <span class="psw"><a href="#">Forgot password?</a></span>
+    <div class="container w3-light-grey">
+      <button type="submit" class="w3-button w3-blue loginbtn w3-card">Login</button>
+      <span class="psw w3-hover-text-purple"><a href="#">Forgot password?</a></span>
     </div>
   </form>
 </div>
@@ -39,5 +42,10 @@
     if (event.target == modal) {
       modal.style.display = "none";
     }
+  }
+
+  function signupInstead() {
+    document.getElementById('authorLoginModal').style.display = "none";
+    document.getElementById('author-signup').style.display = "block";
   }
 </script>
