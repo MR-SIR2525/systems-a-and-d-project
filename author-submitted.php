@@ -49,6 +49,8 @@
     <h1 class="w3-text-green">Your Manuscript was Successfully Uploaded!</h1>
     <p class="redirect-message">You will be redirected to the home page...</p>
   </div>
+
+  <p class="w3-center w3-bottom">Click here if not redirected: <a href="home.php">Home</a></p>
 </body>
 
 </html>
