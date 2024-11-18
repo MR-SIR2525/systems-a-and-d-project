@@ -14,7 +14,7 @@
   }
 
   // Query to select the user based on email
-  $sql = "SELECT author_id, first_name, email, password FROM Author WHERE email = ?";
+  $sql = "SELECT author_id, first_name, last_name, email, password FROM Author WHERE email = ?";
   $stmt = $conn->prepare($sql);
 
   if ($stmt === false) {
@@ -24,7 +24,7 @@
   // Bind parameters for email check
   $stmt->bind_param("s", $email); // Bind single parameter for email
   $stmt->execute();
-  $stmt->bind_result($author_id, $first_name, $db_email, $db_password);
+  $stmt->bind_result($author_id, $first_name, $last_name, $db_email, $db_password);
 
   // Check if the user was found and verify password
   if ($stmt->fetch()) {
@@ -32,6 +32,7 @@
       // Login successful
       $_SESSION['author_id'] = $author_id; // Store author ID in session
       $_SESSION['author_first_name'] = $first_name;
+      $_SESSION['author_last_name'] = $last_name;
       $_SESSION['author_email'] = $db_email; // Optionally store email
 
       // If "Remember Me" is checked, set a cookie
@@ -45,10 +46,12 @@
       // Redirect to the author dashboard or home page
       header("Location: home.php");
       exit;
-    } else {
+    } 
+    else {
       echo "Invalid login credentials.";
     }
-  } else {
+  } 
+  else {
     echo "No user found with those login details.";
   }
 
