@@ -1,0 +1,83 @@
+<!-- Modal Container -->
+<div class="w3-modal" style="display:none" id="author-signup">
+  <div class="w3-modal-content w3-card-4 w3-animate-zoom w3-round-large" style="max-width:600px">
+
+    <!-- Close Button -->
+    <div class="w3-center"><br>
+      <span onclick="document.getElementById('author-signup').style.display='none'"
+        class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close form">x</span>
+    </div>
+
+    <!-- Form Content -->
+    <form class="w3-container w3-padding-large" action="author-signup-action.php" id="emp-form" method="post">
+      <h2 class="w3-center">Author Signup</h2>
+      <p class="w3-center">Please fill in this form to create an account to start uploading manuscripts.</p>
+      <hr class="w3-border-light-gray w3-margin-bottom">
+
+      <label for="fname" class="w3-text"><b>First Name</b></label>
+      <input class="w3-input w3-border w3-margin-bottom" type="text" name="fname"
+        required>
+
+      <label for="lname" class="w3-text"><b>Last Name</b></label>
+      <input class="w3-input w3-border w3-margin-bottom" type="text" name="lname"
+        required>
+
+      <label for="email" class="w3-text"><b>Email</b></label>
+      <input class="w3-input w3-border w3-margin-bottom" type="text" name="email" required>
+
+      <b id="psw-message" class="w3-text w3-red"></b>
+      <label for="psw" class="w3-text"><b>Password</b></label>
+      <input class="w3-input w3-border w3-margin-bottom" type="password" name="psw" id="psw"
+        required>
+
+      <label for="psw-repeat" class="w3-text"><b>Repeat Password</b></label>
+      <input class="w3-input w3-border w3-margin-bottom" type="password" name="psw-repeat" id="psw-repeat"
+        required>
+
+      <!-- <label class="w3-margin-bottom">
+        <input class="w3-check" type="checkbox" checked="checked" name="remember"> Remember me
+      </label> -->
+
+      <div class="w3-row-padding w3-margin-top">
+        <div class="w3-half">
+          <button type="button" class="w3-button w3-red w3-block"
+            onclick="document.getElementById('author-signup').style.display='none'">Cancel</button>
+        </div>
+        <div class="w3-half">
+          <button type="submit" class="w3-button w3-blue w3-block">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  // When the user clicks anywhere outside of the modal, close it
+  var modal = document.getElementById('author-signup');
+
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+</script>
+
+<script>
+  document.getElementById('emp-form').addEventListener('submit', function(event) {
+      const password = document.getElementById('psw').value;
+      const repeatPassword = document.getElementById('psw-repeat').value;
+      const pswMessage = document.getElementById('psw-message');
+
+      // Reset the message each time the form is submitted
+      pswMessage.textContent = '';
+      pswMessage.style.display = 'none';
+
+      if (password !== repeatPassword) {
+          event.preventDefault(); // Prevent form submission
+
+          // Display error message if passwords don't match
+          pswMessage.textContent = 'Passwords do not match. You entered "' + password + '" and "' + repeatPassword + '"';
+          pswMessage.style.display = 'block';
+      }
+  });
+</script>

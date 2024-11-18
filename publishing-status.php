@@ -85,7 +85,7 @@
 
 
   <!-- Including modals here, just before the end of the body -->
-  <?php include 'author-login.php'; ?>
+  <?php include 'author-login.html'; ?>
   <?php include 'staff-login.html'; ?>
   <?php include 'staff-add.html'; ?>
 
