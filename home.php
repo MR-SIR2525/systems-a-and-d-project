@@ -5,9 +5,6 @@
   <?php include 'templates/head-meta.html'; ?>
   <?php include 'templates/head-css.html'; ?>
 
-  <!-- required for pages with the login modal form -->
-  <link rel="stylesheet" href="login-modal.css">
-
   <style>
     body, html {
       height: 100%;
@@ -30,6 +27,9 @@
 <body>
   <?php
     session_start();
+    if (isset($_GET['signup_success'])) {
+      echo '<p class="w3-text-green w3-center">Signup successful! You can now log in.</p>';
+    }
   ?>
 
   <!-- Nav Links (sit on top) -->
@@ -88,7 +88,7 @@
   <?php include 'templates/footer.php'; ?>
 
 
-  <!-- Including the Staff Login Modal here, just before the end of the body -->
+  <!-- Including modals here, just before the end of the body -->
   <?php include 'author-login.html'; ?>
   <?php include 'author-signup.html'; ?>
   <?php include 'staff-login.html'; ?>
