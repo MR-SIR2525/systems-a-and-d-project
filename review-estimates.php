@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Kaitaia Publishing Collective | Review Cost/Schedule Estimates</title>
+  <title>Review Cost/Schedule Estimates | Kaitaia Publishing Collective</title>
   <?php include 'templates/head-meta.html'; ?>
   <?php include 'templates/head-css.html'; ?>
 
@@ -32,7 +32,7 @@
   <!-- Header and Table section -->
   <section class="w3-white w3-large px-48 pb-48">
     <header class="w3-container mt-55" id="home">
-      <h1 class="w3-center">Approve or Reject Cost and Schedule Estimates</h1>
+      <h1 class="w3-center">Approve/Reject: Cost and Schedule Estimates</h1>
       <p class="w3-center w3-text-grey">Select a manuscript to view an estimate for:</p>
     </header>
 

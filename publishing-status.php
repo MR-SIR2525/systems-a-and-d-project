@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Kaitaia Publishing Collective | Contracts</title>
+  <title>Publishing Status | Kaitaia Publishing Collective</title>
   <?php include 'templates/head-meta.html'; ?>
   <?php include 'templates/head-css.html'; ?>
 
@@ -32,8 +32,8 @@
 
   <section class="w3-white w3-large px-48 pb-48">
     <header class="w3-container mt-55" id="home">
-      <h1 class="w3-center">Draft or Send Contracts</h1>
-      <p class="w3-center w3-text-grey">Select a manuscript from the list below to manage its contract:</p>
+      <h1 class="w3-center">Publishing Status</h1>
+      <p class="w3-center w3-text-grey">Select a manuscript from the list to manage its publishing status:</p>
     </header>
 
     <!-- Manuscripts Table -->
