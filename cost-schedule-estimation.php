@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Kaitaia Publishing Collective | Cost & Schedule Estimation</title>
+  <title>Cost & Schedule Estimation | Kaitaia Publishing Collective</title>
   <?php include 'templates/head-meta.html'; ?>
   <?php include 'templates/head-css.html'; ?>
 
@@ -65,22 +65,22 @@
       <form action="#" method="POST" class="w3-container w3-card w3-white w3-round w3-padding">
         <!-- Cost Estimation -->
         <label for="cost_estimation" class="w3-text-dark-grey"><b>Cost Estimation ($)</b></label>
-        <input type="number" id="cost_estimation" name="cost_estimation" class="w3-input w3-border w3-round w3-margin-bottom" placeholder="Enter estimated cost">
+        <input type="number" id="cost_estimation" name="cost_estimation" class="w3-input w3-border w3-round w3-margin-bottom" placeholder="Enter estimated cost" required>
 
         <!-- Date Estimation Section -->
         <label class="w3-text-dark-grey"><b>Date Estimation</b></label>
         <div class="w3-row-padding">
           <div class="w3-half w3-margin-bottom">
             <label for="print_estimate" class="w3-medium">Time to Print Estimate (weeks):</label>
-            <input type="number" id="print_estimate" name="print_estimate" class="w3-input w3-border w3-round" placeholder="Weeks">
+            <input type="number" id="print_estimate" name="print_estimate" class="w3-input w3-border w3-round" placeholder="Weeks" required>
           </div>
           <div class="w3-half w3-margin-bottom">
             <label for="completion_date" class="w3-medium">Estimated Printing Completion Date:</label>
-            <input type="date" id="completion_date" name="completion_date" class="w3-input w3-border w3-round">
+            <input type="date" id="completion_date" name="completion_date" class="w3-input w3-border w3-round" required>
           </div>
           <div class="w3-half">
             <label for="launch_date" class="w3-medium">Estimated Book Launch Date:</label>
-            <input type="date" id="launch_date" name="launch_date" class="w3-input w3-border w3-round">
+            <input type="date" id="launch_date" name="launch_date" class="w3-input w3-border w3-round" required>
           </div>
         </div>
 
